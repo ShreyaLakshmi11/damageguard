@@ -1,0 +1,16 @@
+{
+  "name": "damageguard",
+  "version": "1.0.0",
+  "description": "Marketplace with AI-powered damage dispute resolution (Groq vision), email notifications and return-abuse blocking",
+  "main": "server.js",
+  "scripts": { "start": "node server.js", "dev": "node --watch server.js" },
+  "engines": { "node": ">=18" },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^11.5.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "jsonwebtoken": "^9.0.2",
+    "nodemailer": "^6.9.15"
+  }
+}

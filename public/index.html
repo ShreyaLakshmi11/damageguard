@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>DamageGuard – Shop with Confidence</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+:root{color-scheme:light;--bg:#f5f5f5;--card:#fff;--ink:#141414;--mut:#6b6b6b;--line:#e4e4e4;--hero:#e4e4e4;--hero2:#d3d3d3;--dk:#161616;--dkt:#fff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.4 Inter,system-ui,-apple-system,Segoe UI,sans-serif}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--card);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:16px;padding:12px 22px;flex-wrap:wrap}
+.logo{display:flex;gap:12px;align-items:center;cursor:pointer}.logo b{display:grid;place-items:center;width:44px;height:44px;border-radius:14px;background:var(--dk);color:var(--dkt);font-size:22px}
+.logo strong{display:block;font-size:19px}.logo small{letter-spacing:.2em;font-size:11px;color:var(--mut)}
+.search{flex:1;min-width:220px;max-width:640px;display:flex;border:1px solid var(--line);border-radius:99px;overflow:hidden;background:var(--card)}
+.search input{flex:1;border:0;padding:0 18px;font:inherit;background:transparent;color:var(--ink);outline:0;min-width:0}
+button{font:inherit;cursor:pointer}.btn{background:var(--dk);color:var(--dkt);border:0;border-radius:12px;padding:10px 18px;font-weight:600}
+.search .btn{border-radius:0;padding:12px 24px}.ghost{background:var(--card);color:var(--ink);border:1px solid var(--line)}
+nav{margin-left:auto;display:flex;gap:6px;align-items:center;flex-wrap:wrap}nav a{padding:8px 12px;cursor:pointer;border-radius:10px}nav a:hover{background:var(--bg)}
+main{padding:22px;max-width:1280px;margin:auto}
+.hero{display:grid;grid-template-columns:1.4fr 1fr;border-radius:32px;overflow:hidden;background:var(--hero)}
+.hero>div:first-child{padding:48px 40px}.hero>div:last-child{background:var(--hero2);display:grid;place-items:center;font-size:110px}
+.eyebrow{letter-spacing:.2em;font-size:13px;color:var(--mut);font-weight:600}
+.hero h1{font-size:clamp(40px,6vw,72px);line-height:1.05;margin:20px 0;font-weight:400;letter-spacing:-.03em}.hero h1 span{color:var(--mut)}
+.hero p{color:var(--mut);font-size:18px;max-width:560px}.row{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+h2{font-size:34px;font-weight:400;margin:36px 0 16px;letter-spacing:-.02em}
+.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:14px}
+.cat{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px 8px;text-align:center;font-weight:600;cursor:pointer}.cat i{display:block;font-size:34px;font-style:normal;margin-bottom:8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+.pc{background:var(--card);border:1px solid var(--line);border-radius:26px;padding:0 0 20px;position:relative;overflow:hidden}
+.pc .im{height:170px;background:var(--bg);display:grid;place-items:center;font-size:64px;overflow:hidden}.pc .im img{width:100%;height:100%;object-fit:cover}
+.pc .in{padding:0 22px}.off{position:absolute;top:14px;left:14px;background:var(--dk);color:var(--dkt);border-radius:99px;padding:3px 12px;font-weight:700;font-size:13px}
+.k{font-size:13px;letter-spacing:.08em;color:var(--mut);text-transform:uppercase;margin-top:18px}.pc h3{margin:4px 0 8px;font-size:19px}
+.pr{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px}.pr b{font-size:20px}.pr s{color:var(--mut);font-size:14px;margin-left:6px}.pr span{color:var(--mut)}.pc .btn{width:100%;padding:14px}
+.steps{background:var(--dk);color:var(--dkt);border-radius:34px;padding:40px;margin-top:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px}.steps h4{margin:8px 0;font-size:21px}.steps p{margin:0;opacity:.65;font-size:18px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px;margin-bottom:16px}
+input,select,textarea{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:10px 12px;width:100%;margin:4px 0 12px}
+label{font-size:14px;color:var(--mut)}.empty{color:var(--mut);padding:40px;text-align:center;border:1px dashed var(--line);border-radius:24px}
+.tag{display:inline-block;border-radius:99px;padding:2px 10px;font-size:13px;background:var(--bg);border:1px solid var(--line)}
+.modal{position:fixed;inset:0;background:#0009;display:none;place-items:center;z-index:20;padding:16px}.modal.on{display:grid}
+.box{background:var(--card);border-radius:24px;padding:26px;width:min(560px,100%);max-height:90vh;overflow:auto}
+.res{border-radius:16px;padding:16px;margin-top:12px;background:var(--bg);border-left:6px solid var(--dk)}.pv{max-width:100%;max-height:220px;border-radius:14px;margin:8px 0}
+.warn{background:#c0392b;color:#fff;padding:12px 22px;text-align:center;font-weight:600}
+footer{color:var(--mut);padding:30px 22px 40px;max-width:1280px;margin:auto}
+@media(max-width:760px){.hero{grid-template-columns:1fr}.hero>div:last-child{display:none}.hero>div:first-child{padding:30px 22px}}
+.toast{position:fixed;bottom:calc(24px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);background:var(--dk);color:var(--dkt);padding:12px 22px;border-radius:99px;z-index:30;font-weight:600}.two{display:grid;grid-template-columns:1fr 360px;gap:18px;align-items:start}@media(max-width:860px){.two{grid-template-columns:1fr}}
+.line{display:flex;align-items:center;gap:16px;flex-wrap:wrap}.th{width:64px;height:64px;border-radius:16px;background:var(--bg);display:grid;place-items:center;font-size:32px}
+.qty{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:99px;padding:4px}.qty button{width:30px;height:30px;border-radius:50%;border:0;background:var(--bg);font-size:18px}
+.srow{display:flex;justify-content:space-between;padding:8px 0;color:var(--mut)}.tot{color:var(--ink);font-weight:700;font-size:19px;border-top:1px solid var(--line);margin-bottom:12px}
+.bd{display:inline-block;border-radius:99px;padding:3px 12px;font-size:13px;font-weight:600}.b1{background:#eef1f5;color:#445}.b2{background:#e3f1ff;color:#0b5cad}.b3{background:#e2f6e8;color:#12713a}.b4{background:#fff1d6;color:#8a5a00}
+.prog{display:flex;gap:6px;margin:14px 0 4px}.prog i{flex:1;height:6px;border-radius:9px;background:var(--line)}.prog i.on{background:var(--dk)}.pl{display:flex;justify-content:space-between;font-size:12px;color:var(--mut);margin-bottom:12px}
+.steps3{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}.steps3 span{flex:1;min-width:150px;background:var(--bg);border-radius:14px;padding:10px 14px;font-weight:600;font-size:14px}
+.drop{display:grid;place-items:center;gap:4px;border:2px dashed var(--line);border-radius:18px;padding:26px;cursor:pointer;text-align:center;font-size:30px;margin:6px 0 12px}.drop b{font-size:16px}.drop span{font-size:13px;color:var(--mut)}.drop:hover{border-color:var(--dk)}
+.mail{padding:0;overflow:hidden}.mh{display:flex;gap:12px;align-items:center;padding:18px 22px;border-bottom:1px solid var(--line);background:var(--bg)}.av{width:42px;height:42px;border-radius:50%;background:var(--dk);color:var(--dkt);display:grid;place-items:center;font-weight:700}.mb2{padding:18px 22px}
+.pc{transition:.15s}.pc:hover{transform:translateY(-3px);box-shadow:0 10px 28px #0000001a}.btn{transition:.15s}.btn:hover{opacity:.85}header{box-shadow:0 1px 12px #0000000d}
+</style></head><body>
+<div id="warn" class="warn" hidden></div>
+<header>
+ <div class="logo" onclick="go('home')"><b>D</b><div><strong>DamageGuard</strong><small>SHOP WITH CONFIDENCE</small></div></div>
+ <div class="search"><input id="q" placeholder="Search products, brands and categories..." onkeydown="if(event.key==='Enter')doSearch()"><button class="btn" onclick="doSearch()">Search</button></div>
+ <nav id="nav"></nav>
+</header>
+<main id="app"></main>
+<footer>DamageGuard Commerce — AI-powered return protection.</footer>
+
+<div class="modal" id="m"><div class="box" id="mb"></div></div>
+
+<script>
+const CATS=[["Electronics","💻"],["Fashion","👗"],["Home & Living","🏠"],["Beauty","✨"],["Sports","⚽"],["Books","📚"],["Grocery","🛒"],["Accessories","⌚"]];
+let token=localStorage.getItem("dg_token"),me=null,products=[],orders=[],mails=[],cart=[],view="home",filter={cat:"",q:""},preOrder=null;
+const $=s=>document.querySelector(s),esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const inr=n=>"₹"+Number(n).toLocaleString("en-IN"),icon=c=>(CATS.find(x=>x[0]===c)||[0,"📦"])[1];
+function toast(m,ms){const t=document.createElement("div");t.className="toast";t.textContent=m;document.body.appendChild(t);setTimeout(()=>t.remove(),ms||3500)}
+async function api(p,method,body){
+ const r=await fetch("/api"+p,{method:method||"GET",headers:{"Content-Type":"application/json",...(token?{Authorization:"Bearer "+token}:{})},body:body?JSON.stringify(body):undefined});
+ const d=await r.json().catch(()=>({}));if(!r.ok){if(r.status===401&&token&&p!=="/login")signOut(1);throw new Error(d.error||"Request failed")}return d;
+}
+async function refresh(){
+ products=(await api("/products")).map(p=>({...p,cat:p.category,em:p.emoji}));
+ if(token){try{me=await api("/me");orders=await api("/orders");mails=await api("/mails")}catch(e){me=null}}
+}
+async function init(){try{await refresh()}catch(e){toast("Cannot reach server")}render()}
+const myStats=()=>me?{ret:me.returns,orders:me.orders,blocked:me.blocked,limit:me.limit}:{ret:0,orders:0,blocked:false,limit:5};
+function chrome(){
+ const st=myStats(),w=$("#warn");w.hidden=!st.blocked;w.textContent=st.blocked?`Account restricted: ${st.ret} returns (limit is ${st.limit}). Ordering is blocked because of repeated order-and-return activity.`:"";
+ $("#nav").innerHTML=`<a onclick="go('shop')">Shop</a><a onclick="go('sell')">Sell</a><a onclick="go('dispute')">Report Damage</a>${me?.isAdmin?`<a onclick="go('admin')">Admin</a>`:""}`+
+ (me?`<a onclick="go('orders')">Orders</a><a onclick="go('mail')">Mailbox (${mails.length})</a><a onclick="go('cart')">Cart (${cart.length})</a><span class="tag">${esc(me.name)}</span><a onclick="signOut()">Sign out</a>`
+ :`<a onclick="authModal('in')">Sign in</a><button class="btn" onclick="authModal('up')">Register</button>`);
+}
+function render(){chrome();({home,shop,cart:cartV,orders:ordersV,mail:mailV,sell,dispute:disputeV,admin:adminV})[view]()}
+function go(v){if(["orders","mail","cart"].includes(v)&&!me)return authModal("in");view=v;if(v==="home"){filter={cat:"",q:""};$("#q").value=""}render();scrollTo(0,0)}
+function doSearch(){filter.q=$("#q").value.trim();filter.cat="";go("shop")}
+function setCat(c){filter={cat:c,q:""};go("shop")}
+function card(p){const off=p.mrp>p.price?Math.round((1-p.price/p.mrp)*100):0;
+ return `<div class="pc">${off?`<span class="off">${off}% OFF</span>`:""}<div class="im">${p.em||icon(p.cat)}</div><div class="in"><div class="k">${esc(p.cat)}</div><h3>${esc(p.name)}</h3>
+ <div class="pr"><div><b>${inr(p.price)}</b>${p.mrp>p.price?`<s>${inr(p.mrp)}</s>`:""}</div><span>${p.stock} left</span></div>
+ <button class="btn" ${p.stock<1?"disabled":""} onclick="addCart('${p.id}')">${p.stock<1?"Sold out":"Add to cart"}</button></div></div>`}
+function home(){
+ $("#app").innerHTML=`<section class="hero"><div><div class="eyebrow">✦ AI-POWERED SHOPPING PROTECTION</div><h1>Shop Smart.<br><span>Shop with Confidence.</span></h1>
+ <p>A multi-seller marketplace where AI decides fairly whether damage happened in delivery or at the seller, and stops return abuse.</p>
+ <div class="row"><button class="btn" onclick="go('shop')">Start Shopping →</button><button class="btn ghost" onclick="go('dispute')">Report a damaged product</button></div></div><div>🛍️</div></section>
+ <h2>Shop by Category</h2><div class="cats">${CATS.map(c=>`<div class="cat" onclick="setCat('${c[0]}')"><i>${c[1]}</i>${c[0]}</div>`).join("")}</div>
+ <h2>Popular Products</h2>${products.length?`<div class="grid">${products.slice(0,8).map(card).join("")}</div>`:`<div class="empty">No products yet. Add some on the Sell page.</div>`}
+ <div class="steps"><div>📷<h4>01 Upload evidence</h4><p>Photos of the damaged item and packaging.</p></div><div>🧠<h4>02 AI analysis</h4><p>External vs internal damage, with a confidence score.</p></div><div>✅<h4>03 Fair resolution</h4><p>Delivery fault: exchange label. Seller fault: refund or replacement. Unsure: manual review.</p></div></div>`}
+function shop(){const l=products.filter(p=>(!filter.cat||p.cat===filter.cat)&&(!filter.q||(p.name+p.cat).toLowerCase().includes(filter.q.toLowerCase())));
+ $("#app").innerHTML=`<h2>${esc(filter.cat||(filter.q?`Results for "${filter.q}"`:"All products"))}</h2>`+(l.length?`<div class="grid">${l.map(card).join("")}</div>`:`<div class="empty">No products found.</div>`)}
+function addCart(id){if(!me)return authModal("in");if(myStats().blocked)return toast("Your account is blocked from ordering.");chg(id,1)}
+function chg(id,d){const p=products.find(x=>x.id===id);if(d>0){if(cart.filter(x=>x===id).length>=p.stock)return toast("No more stock.");cart.push(id);toast("Added to cart",1200)}else{const i=cart.indexOf(id);if(i>-1)cart.splice(i,1)}render()}
+function cartV(){
+ const ids=[...new Set(cart)],items=ids.map(id=>products.find(p=>p.id===id)).filter(Boolean),qty=id=>cart.filter(x=>x===id).length,
+ sub=cart.reduce((t,id)=>t+(products.find(p=>p.id===id)?.price||0),0),save=cart.reduce((t,id)=>{const p=products.find(x=>x.id===id);return t+(p?p.mrp-p.price:0)},0);
+ $("#app").innerHTML=`<h2>Your cart</h2>`+(items.length?`<div class="two"><div>${items.map(p=>`<div class="panel line"><div class="th">${p.em||icon(p.cat)}</div><div style="flex:1;min-width:140px"><div class="k" style="margin:0">${esc(p.cat)}</div><b>${esc(p.name)}</b><div>${inr(p.price)}</div></div><div class="qty"><button onclick="chg('${p.id}',-1)">−</button><span>${qty(p.id)}</span><button onclick="chg('${p.id}',1)">+</button></div><b>${inr(p.price*qty(p.id))}</b></div>`).join("")}</div>
+ <div class="panel"><b style="font-size:20px">Order summary</b><div class="srow"><span>Subtotal</span><span>${inr(sub)}</span></div><div class="srow"><span>You save</span><span>${inr(save)}</span></div><div class="srow"><span>Delivery</span><span>Free</span></div><div class="srow tot"><span>Total</span><span>${inr(sub)}</span></div>
+ <label>Delivery address</label><textarea id="addr" rows="3" placeholder="House no, street, city, PIN"></textarea><button class="btn" id="co" style="width:100%;padding:14px" onclick="checkout()">Place order</button></div></div>`:`<div class="empty">Your cart is empty.<br><br><button class="btn" onclick="go('shop')">Browse products</button></div>`)}
+async function checkout(){
+ const address=$("#addr").value.trim();if(!address)return toast("Enter a delivery address.");
+ $("#co").disabled=true;
+ try{await api("/orders","POST",{address,items:[...new Set(cart)].map(id=>({id,qty:cart.filter(x=>x===id).length}))});cart=[];await refresh();view="orders";render();toast("Order placed ✓")}
+ catch(e){toast(e.message,5000);$("#co").disabled=false;await refresh().catch(()=>{});chrome()}}
+const stCls=s=>({"Placed":"b1","Delivered":"b2","Return approved":"b3","Manual review":"b4"}[s]||"b1");
+function act(o){const d=o.dispute;
+ if(d)return `<div class="res"><b>AI verdict:</b> ${esc(d.fault)} fault (${Math.round(d.confidence*100)}% confidence)<br>${esc(d.reasoning)}${d.photo?`<br><img class="pv" src="${d.photo}">`:""}</div>`;
+ if(o.status==="Placed")return `<div class="row"><button class="btn ghost" onclick="deliver('${o.id}')">Mark as delivered</button></div>`;
+ if(Date.now()-o.delivered_at<=me.returnDays*864e5)return `<div class="row"><button class="btn ghost" onclick="preOrder='${o.id}';go('dispute')">Report damage / Return</button></div><small style="color:var(--mut)">Return window: ${me.returnDays} days after delivery.</small>`;
+ return `<small style="color:var(--mut)">Return window closed.</small>`}
+async function deliver(id){try{await api("/orders/"+id+"/deliver","POST");await refresh();render();toast("Marked as delivered")}catch(e){toast(e.message)}}
+function ordersV(){const st=myStats();
+ $("#app").innerHTML=`<h2>Your orders</h2><div class="panel"><div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px"><b>Returns used: ${st.ret} of ${st.limit} allowed</b><span style="color:var(--mut)">${st.orders} orders total</span></div>
+ <div class="prog">${[1,2,3,4,5].map(n=>`<i class="${n<=st.ret?"on":""}"></i>`).join("")}</div><small style="color:var(--mut)">Ordering is blocked after more than ${st.limit} returns.</small></div>`+
+ (orders.length?orders.map(o=>{const p=o.dispute?3:o.status==="Delivered"?2:1;return `<div class="panel"><div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap"><div><b style="font-size:18px">${esc(o.pname)}</b> × ${o.qty}<div style="color:var(--mut);font-size:14px">${new Date(o.created_at).toLocaleString()} · ${esc(o.address)}</div></div><div style="text-align:right"><b>${inr(o.price)}</b><br><span class="bd ${stCls(o.status)}">${esc(o.status)}</span></div></div>
+ <div class="prog">${[1,2,3].map(n=>`<i class="${n<=p?"on":""}"></i>`).join("")}</div><div class="pl"><span>Placed</span><span>Delivered</span><span>Resolved</span></div>${act(o)}</div>`}).join(""):`<div class="empty">No orders yet.<br><br><button class="btn" onclick="go('shop')">Start shopping</button></div>`)}
+/* ---- email helpers ---- */
+const MC={};
+const mailText=m=>`To: ${m.to}\nSubject: ${m.subject}\n\n${m.body}`;
+async function copyMail(id,quiet){const m=MC[id];let ok=false;try{await navigator.clipboard.writeText(mailText(m));ok=true}catch(e){}if(!quiet)toast(ok?"Email copied to clipboard":"Copy failed");return ok}
+const mailBtns=id=>`<div class="row" style="margin-top:14px"><a class="btn" style="text-decoration:none" href="mailto:${encodeURIComponent(MC[id].to)}?subject=${encodeURIComponent(MC[id].subject)}&body=${encodeURIComponent(MC[id].body)}">Open in mail app</a><a class="btn ghost" style="text-decoration:none" target="_blank" rel="noopener" href="https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(MC[id].to)}&su=${encodeURIComponent(MC[id].subject)}&body=${encodeURIComponent(MC[id].body)}">Open in Gmail</a><button class="btn ghost" onclick="copyMail('${id}')">Copy email</button></div>`;
+function mailV(){mails.forEach(m=>MC[m.id]=m);
+ $("#app").innerHTML=`<h2>Mailbox</h2>`+(mails.length?mails.map(m=>`<div class="panel mail"><div class="mh"><div class="av">D</div><div style="flex:1"><b>${esc(m.subject)}</b><div style="color:var(--mut);font-size:13px">From DamageGuard Support · To ${esc(m.to)} · ${new Date(m.at).toLocaleString()} · ${m.sent?"✓ emailed":"in-app only"}</div></div></div><div class="mb2"><pre style="white-space:pre-wrap;font:inherit;margin:0">${esc(m.body)}</pre>${mailBtns(m.id)}</div></div>`).join(""):`<div class="empty">No emails yet. Resolution emails appear here the moment a dispute is decided.</div>`)}
+/* ---- sell ---- */
+function sell(){$("#app").innerHTML=`<h2>Sell a product</h2><div class="panel" style="max-width:560px"><label>Name</label><input id="pn"><label>Category</label><select id="pc">${CATS.map(c=>`<option>${c[0]}</option>`).join("")}</select>
+ <label>Selling price (₹)</label><input id="pp" type="number" min="1"><label>MRP (₹)</label><input id="pm" type="number" min="1"><label>Stock</label><input id="ps" type="number" min="1"><button class="btn" onclick="addProduct()">List product</button></div>`}
+async function addProduct(){if(!me)return authModal("in");
+ try{await api("/products","POST",{name:$("#pn").value,category:$("#pc").value,price:$("#pp").value,mrp:$("#pm").value,stock:$("#ps").value,emoji:icon($("#pc").value)});await refresh();go("shop");toast("Product listed")}catch(e){toast(e.message)}}
+/* ---- dispute ---- */
+const shrink=f=>new Promise((res,rej)=>{const i=new Image();i.onload=()=>{const k=Math.min(1,1024/Math.max(i.width,i.height)),c=document.createElement("canvas");c.width=i.width*k;c.height=i.height*k;c.getContext("2d").drawImage(i,0,0,c.width,c.height);res(c.toDataURL("image/jpeg",.8))};i.onerror=()=>rej(new Error("Could not read image"));i.src=URL.createObjectURL(f)});
+function pv(i){const f=i.files[0];$("#pvw").innerHTML=f?`<img class="pv" src="${URL.createObjectURL(f)}">`:""}
+function disputeV(){
+ if(!me){$("#app").innerHTML=`<h2>Report a damaged product</h2><div class="empty">Please sign in to open a dispute.<br><br><button class="btn" onclick="authModal('in')">Sign in</button></div>`;return}
+ const el=orders.filter(o=>o.status==="Delivered"&&!o.dispute&&Date.now()-o.delivered_at<=me.returnDays*864e5);
+ $("#app").innerHTML=`<h2>Dispute resolution</h2><div class="steps3"><span>① Choose your order</span><span>② Upload damage photo</span><span>③ AI decides · email sent instantly</span></div><div class="panel" style="max-width:680px"><p style="margin-top:0;color:var(--mut)">Include the shipping box if you still have it. Damaged box = delivery fault (exchange label). Damaged product with an intact box = merchant fault (refund or replacement).</p>
+ ${el.length?`<label>Order</label><select id="oid">${el.map(o=>`<option value="${o.id}" ${o.id===preOrder?"selected":""}>${esc(o.pname)} — ${new Date(o.created_at).toLocaleDateString()}</option>`).join("")}</select>
+ <label>Damage photo</label><label class="drop" for="img">📷<b>Click to upload a photo</b><span>PNG or JPG</span></label><input type="file" id="img" accept="image/*" hidden onchange="pv(this)"><div id="pvw"></div><label>What happened? (optional)</label><textarea id="note" rows="2"></textarea>
+ <button class="btn" id="go" style="width:100%;padding:14px" onclick="analyze()">Analyze & resolve</button><div id="out"></div>`:`<div class="empty">No eligible orders.<br>Place an order, mark it as delivered, then report damage within ${me.returnDays} days.<br><br><button class="btn" onclick="go('orders')">Go to orders</button></div>`}</div>`}
+async function analyze(){
+ const f=$("#img").files[0],out=$("#out");if(!f)return toast("Upload a photo first.");
+ $("#go").disabled=true;out.innerHTML=`<div class="res">Analyzing image with AI…</div>`;
+ try{const image=await shrink(f),d=await api("/disputes","POST",{orderId:$("#oid").value,note:$("#note").value,image});
+  MC[d.mail.id]=d.mail;await refresh();chrome();const v=d.dispute.fault;
+  out.innerHTML=`<div class="res"><b>${v==="unsure"?"Manual review":v==="delivery"?"Delivery-side damage":"Merchant-side damage"}</b> (${Math.round(d.dispute.confidence*100)}% confidence)<br>${esc(d.dispute.reasoning)}<br><br>${esc(d.outcome)}<br><br>✉️ Email sent to ${esc(d.mail.to)}${d.mail.sent?"":" (stored in your Mailbox)"}.${d.blocked?`<br><br><b>Your account is now blocked from ordering (${d.returns} returns, limit ${d.limit}).</b>`:""}</div>
+  <div class="row"><button class="btn" onclick="go('mail')">Open mailbox</button></div>${mailBtns(d.mail.id)}`;
+ }catch(e){$("#go").disabled=false;out.innerHTML=`<div class="res">${esc(e.message)}</div>`}}
+/* ---- admin ---- */
+async function adminV(){
+ if(!me?.isAdmin){$("#app").innerHTML=`<div class="empty">Admin only.</div>`;return}
+ $("#app").innerHTML=`<div class="empty">Loading…</div>`;
+ try{const a=await api("/admin/overview");
+  $("#app").innerHTML=`<h2>Manual review queue</h2>`+(a.queue.length?a.queue.map(d=>`<div class="panel"><b>${esc(d.pname)}</b> · ${esc(d.name)} (${esc(d.email)})<br>${esc(d.reasoning)}<br>${d.note?`Customer: ${esc(d.note)}<br>`:""}<img class="pv" src="${d.photo}">
+  <div class="row"><button class="btn" onclick="resolve('${d.id}','delivery')">Delivery fault</button><button class="btn" onclick="resolve('${d.id}','merchant')">Merchant fault</button></div></div>`).join(""):`<div class="empty">No cases waiting.</div>`)+
+  `<h2>Restricted accounts</h2>`+(a.blocked.length?a.blocked.map(u=>`<div class="panel row" style="justify-content:space-between;margin-top:0"><span>${esc(u.email)} — ${u.returns} returns</span><button class="btn ghost" onclick="unblock('${u.id}')">Unblock</button></div>`).join(""):`<div class="empty">No restricted accounts.</div>`)+
+  `<h2>All disputes (${a.disputes.length})</h2>`+a.disputes.map(d=>`<div class="panel">${esc(d.pname)} · ${esc(d.email)} · <span class="tag">${esc(d.fault)}</span> ${Math.round(d.confidence*100)}% · ${new Date(d.created_at).toLocaleString()}</div>`).join("")}catch(e){toast(e.message)}}
+async function resolve(id,fault){try{await api("/admin/disputes/"+id+"/resolve","POST",{fault});toast("Decision saved and customer emailed");adminV()}catch(e){toast(e.message)}}
+async function unblock(id){try{await api("/admin/users/"+id+"/unblock","POST");toast("User unblocked");adminV()}catch(e){toast(e.message)}}
+/* ---- auth ---- */
+const open=h=>{$("#mb").innerHTML=h;$("#m").classList.add("on")},close=()=>$("#m").classList.remove("on");
+$("#m").addEventListener("click",e=>{if(e.target.id==="m")close()});
+const aerr=m=>{const e=$("#aerr");if(e)e.textContent=m};
+function authModal(t){t=t||"in";const i=t==="in";
+ open(`<h3>${i?"Sign in":"Create your account"}</h3>${i?"":`<label>Name</label><input id="an" autocomplete="name">`}<label>Email</label><input id="ae" type="email" autocomplete="email"><label>Password</label><input id="ap" type="password" autocomplete="${i?"current-password":"new-password"}" onkeydown="if(event.key==='Enter')submitAuth('${t}')">
+ <div id="aerr" style="color:#c0392b;font-weight:600;min-height:20px"></div><div class="row"><button class="btn" onclick="submitAuth('${t}')">${i?"Sign in":"Register"}</button><button class="btn ghost" onclick="authModal('${i?"up":"in"}')">${i?"Create account":"I have an account"}</button></div>`)}
+async function submitAuth(t){
+ try{const body={email:$("#ae").value,password:$("#ap").value};if(t==="up")body.name=$("#an").value;
+  const d=await api(t==="in"?"/login":"/register","POST",body);token=d.token;localStorage.setItem("dg_token",token);close();await refresh();render();toast("Welcome, "+me.name)}catch(e){aerr(e.message)}}
+function signOut(quiet){token=null;me=null;orders=[];mails=[];cart=[];localStorage.removeItem("dg_token");if(!quiet)toast("Signed out");go("home")}
+init();
+</script></body></html>
