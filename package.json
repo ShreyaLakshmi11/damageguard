@@ -4,7 +4,7 @@
   "description": "Marketplace with AI-powered damage dispute resolution (Groq vision), email notifications and return-abuse blocking",
   "main": "server.js",
   "scripts": { "start": "node server.js", "dev": "node --watch server.js" },
-  "engines": { "node": ">=18" },
+  "engines": { "node": "22.x" },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "better-sqlite3": "^11.5.0",
